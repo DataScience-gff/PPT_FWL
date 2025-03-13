@@ -197,7 +197,7 @@ siguiente manera para los escenarios optimista, pesimista y neutral:
 -   Conteo optimista: Conteo de observaciones mayores o iguales al rango
     medio
 -   Conteo neutral: Conteo de observaciones mayores o iguales al rango
-    mínimo y menores al rango máximo.
+    mínimo y menores al rango máximo
 
 Definción de pesos de los escenarios Después se divide el conteo para
 cada rango entre el total de las observaciones y esto nos da el
