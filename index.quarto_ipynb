@@ -1,0 +1,109 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: FWL\n",
+        "subtitle: Factor de Forward Looking\n",
+        "format: clean-revealjs\n",
+        "execute: \n",
+        "  echo: true\n",
+        "  output: true\n",
+        "code-fold: false\n",
+        "code-overflow: wrap\n",
+        "html-math-method:\n",
+        "  method: mathjax\n",
+        "  url: \"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"\n",
+        "author:\n",
+        "  - name: Grupo Financiero Ficohsa \n",
+        "    affiliations: Data Science\n",
+        "date: last-modified\n",
+        "html: \n",
+        "  toc: true\n",
+        "  code-fold: show\n",
+        "editor: \n",
+        "  markdown: \n",
+        "    wrap: 72\n",
+        "---\n",
+        "\n",
+        "\n",
+        "# Factor Forward Looking\n",
+        "\n",
+        "## Resumen FWL Tasa Vencidos\n",
+        "\n",
+        "Todo el script se trata de unificar los datos historicos de la cartera\n",
+        "crediticia, hacer un tratamiento de los datos, eliminando valores nulos.\n",
+        "La idea principal es obtener ratio de obligaciones en situación de\n",
+        "default por mes, para lo cual se requiere: Segmentar las obligaciones\n",
+        "por tipo de crédito (Consumo, Corporativo, Vivienda). Obtener un conteo\n",
+        "de obligaciones vencidas por segmento (con dias de mora superior a 90\n",
+        "dias). Obtener un conteo un conteo del total de obligaciones por\n",
+        "segmento.\n",
+        "\n",
+        "$$\n",
+        "Tasa~ Vencido = \\frac{Total~Vencidas}{Total~Obligaciones}\n",
+        "$$\n",
+        "\n",
+        "## Resumen FWL Tasa Vencidos\n",
+        "\n",
+        "::::: columns\n",
+        "::: {.column style=\"font-size:15px\"}\n",
+        "Todo el script se trata de unificar los datos historicos de la cartera\n",
+        "crediticia, hacer un tratamiento de los datos, eliminando valores nulos.\n",
+        "La idea principal es obtener ratio de obligaciones en situación de\n",
+        "default por mes, para lo cual se requiere: Segmentar las obligaciones\n",
+        "por tipo de crédito (Consumo, Corporativo, Vivienda). Obtener un conteo\n",
+        "de obligaciones vencidas por segmento (con dias de mora superior a 90\n",
+        "dias). Obtener un conteo un conteo del total de obligaciones por\n",
+        "segmento.\n",
+        "\n",
+        "$$\n",
+        "Tasa~ Vencido = \\frac{Total~Vencidas}{Total~Obligaciones}\n",
+        "$$\n",
+        "\n",
+        "![](images/Captura%20de%20pantalla%202024-12-09%20155007.png){width=\"100\"}\n",
+        "\n",
+        "### Gerson\n",
+        "\n",
+        "#### Juan\n",
+        ":::\n",
+        "\n",
+        "::: {.column style=\"font-size:15px\"}"
+      ],
+      "id": "7c182c03"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd"
+      ],
+      "id": "f7d32c1f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        ":::\n",
+        ":::::\n",
+        "\n",
+        "## "
+      ],
+      "id": "4903b7da"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\HN34064\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

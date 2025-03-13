@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Grupo Financiero Ficohsa">
-  <meta name="dcterms.date" content="2025-03-12">
+  <meta name="dcterms.date" content="2025-03-13">
   <title>FWL</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -341,37 +406,141 @@ Grupo Financiero Ficohsa
     </div>
 </div>
 
-  <p class="date">March 12, 2025</p>
+  <p class="date">March 13, 2025</p>
 </section>
 <section>
 <section id="factor-forward-looking" class="title-slide slide level1 center">
 <h1>Factor Forward Looking</h1>
 
 </section>
+<section id="forward-looking" class="slide level2">
+<h2>Forward Looking</h2>
+<p>El concepto de factor forward looking es ampliamente utilizado en la gestión de riesgos financieros, análisis de crédito, predicción de demanda y otras áreas donde la anticipación es clave para la toma de decisiones estratégicas.</p>
+<p>Un factor de forward looking es una variable que refleja información relevante sobre eventos o condiciones futuras que podrían afectar un resultado determinado. Estos factores pueden derivarse de múltiples fuentes, como expectativsa del mercado, proyecciones económicas, encuestas de confianza, indicadores adelantados, incluso señales derivadas de modelos de machine learning.</p>
+<p>El uso de factor de forward looking permite a las organizaciones mejorar sus modelos predictivos, reducir riesgos y optimizar la toma de decisiones en entornos inciertos.</p>
+</section>
 <section id="resumen-fwl-tasa-vencidos" class="slide level2">
 <h2>Resumen FWL Tasa Vencidos</h2>
-<p>Todo el script se trata de unificar los datos historicos de la cartera crediticia, hacer un tratamiento de los datos, eliminando valores nulos. La idea principal es obtener ratio de obligaciones en situación de default por mes, para lo cual se requiere: Segmentar las obligaciones por tipo de crédito (Consumo, Corporativo, Vivienda). Obtener un conteo de obligaciones vencidas por segmento (con dias de mora superior a 90 dias). Obtener un conteo un conteo del total de obligaciones por segmento.</p>
+<p>Todo el script se trata de unificar los datos historicos de la cartera crediticia, hacer un tratamiento de los datos, eliminando valores nulos. La idea principal es obtener ratio de obligaciones en situación de default por mes, para lo cual se requiere:</p>
+<ul>
+<li>Segmentar las obligaciones por tipo de crédito (Consumo, Corporativo, Vivienda).</li>
+<li>Obtener un conteo de obligaciones vencidas por segmento (con dias de mora superior a 90 dias).</li>
+<li>Obtener un conteo un conteo del total de obligaciones por segmento.</li>
+</ul>
 <p><span class="math display">\[
 Tasa~ Vencido = \frac{Total~Vencidas}{Total~Obligaciones}
 \]</span></p>
 </section>
-<section id="resumen-fwl-tasa-vencidos-1" class="slide level2">
-<h2>Resumen FWL Tasa Vencidos</h2>
-<div class="columns">
-<div class="column" style="font-size:15px">
-<p>Todo el script se trata de unificar los datos historicos de la cartera crediticia, hacer un tratamiento de los datos, eliminando valores nulos. La idea principal es obtener ratio de obligaciones en situación de default por mes, para lo cual se requiere: Segmentar las obligaciones por tipo de crédito (Consumo, Corporativo, Vivienda). Obtener un conteo de obligaciones vencidas por segmento (con dias de mora superior a 90 dias). Obtener un conteo un conteo del total de obligaciones por segmento.</p>
-<p><span class="math display">\[
-Tasa~ Vencido = \frac{Total~Vencidas}{Total~Obligaciones}
-\]</span></p>
-<p><img data-src="images/Captura%20de%20pantalla%202024-12-09%20155007.png" width="100"></p>
-<h3 id="gerson">Gerson</h3>
-<h4 id="juan">Juan</h4>
-</div><div class="column" style="font-size:15px">
-
-</div></div>
+<section id="resumen-fwl-selección-de-modelo" class="slide level2">
+<h2>Resumen FWL Selección de Modelo</h2>
+<p>La variable objetivo (variable a predecir) es la tasa de vencidos, para estimar esta variable se consideran otras variables macro que pudieran influir en la tasa de vencidos. Para el caso de Honduras se consideran:</p>
+<ul>
+<li>IMAE</li>
+<li>IMAE_var</li>
+<li>IPC</li>
+<li>IPC_var</li>
+<li>Tasa_interes_MN</li>
+<li>Remesas</li>
+<li>PIB</li>
+<li>PIB_var</li>
+</ul>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
+<h3 id="variables-macroeconómica">Variables Macroeconómica</h3>
+<p>Estas variables se extraen del portal del SECMCA (ver imagenes)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/image003.png" class="quarto-figure quarto-figure-center" width="530"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/image004.png" class="quarto-figure quarto-figure-center" width="530"></p>
+</figure>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<h3 id="interpolación-pib">Interpolación PIB</h3>
+<p>Para el caso de PIB_var, se toma el dato del PIB trimestral y manualmente se calcula el porcentaje de variación con respecto al dato del año anterior:</p>
+<p><span class="math display">\[PIB_{var} = \frac{PIB_{t_1} - PIB_{t_0}}{PIB_{t_0}}\]</span></p>
+<p>Se realiza una interpolación del PIB para tener un dato de manera mensual y poder unificarlo con las demás variables macro.</p>
+<p><span class="math display">\[ Variación\_PIB= \frac{PIB_{t_1} - PIB_{t_2}}{3}\]</span></p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<h3 id="data-preprocess">Data Preprocess</h3>
+<p>Se realiza el preprocesamiento necesario para algunos modelos predictivos.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>    <span class="co"># Crear lags para todas las columnas excepto 'dummy' y 'consumo'</span></span>
+<span id="cb1-2"><a href=""></a>    lags <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">12</span>]</span>
+<span id="cb1-3"><a href=""></a>    <span class="cf">for</span> col <span class="kw">in</span> df.columns:</span>
+<span id="cb1-4"><a href=""></a>        <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'dummy'</span>, segmento_analizar]:</span>
+<span id="cb1-5"><a href=""></a>            <span class="cf">for</span> lag <span class="kw">in</span> lags:</span>
+<span id="cb1-6"><a href=""></a>                df[<span class="ss">f'</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">_lag</span><span class="sc">{</span>lag<span class="sc">}</span><span class="ss">'</span>] <span class="op">=</span> df[col].shift(lag)</span>
+<span id="cb1-7"><a href=""></a>    <span class="co"># Eliminar filas que contienen NA</span></span>
+<span id="cb1-8"><a href=""></a>    df <span class="op">=</span> df.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>Se entrena una batería de modelos, considerando variables exogenas, combinaciones de estas y sub dividiendo los datos, lo que se persigue es realizar una matriz de las métricas resultantes de estos modelos, para posteriormente filtrarlos por logica de negocio y valores de estas métricas, obtenieno una matriz reducida con los modelos que cumplen con las pruebas y que se podrían implementar.</p>
+<p>Se escoge el mejor modelo, tratando de priorizar un modelo de Regresión Lineal con PIB_var como variable independiente</p>
+</section>
+<section id="resumen-fwl-escenarios-macroeconómicos" class="slide level2">
+<h2>Resumen FWL Escenarios Macroeconómicos</h2>
+<p>El motivo principal de este paso es generar escenarios futuros para la variable independiente (PIB_var) para lo cual se requiere de la información del FMI/WEO referente e las proyecciones de la variable independiente hasta 2028.</p>
+<p>Para obtener el dato mensual de las variaciones del PIB, se calcula la diferencia entre un año y el siguiente, y esta diferencia se divide entre 12 para distribuirlo uniformemente.</p>
+<pre><code>diferencia = (pib_actual - pib_anterior) / 12</code></pre>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p>Para los meses de Enero a Noviembre, se incrementa el valor actual por el dato que se obtuvo del cálculo anterior.</p>
+<p>Para generar los escenarios Pesimista y Optimista, se requiere obtener la desviación estándar de la serie neutral, a esta serie neutral, se le suma una desviación estándar y así se obtiene el escenario Optimista, para el escenario pesimista a la serie neutral se le resta una desviación estándar.</p>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<h3 id="suavizamiento">Suavizamiento:</h3>
+<p>Para los primeros meses de predicciones, un aumento de su valor en una desviación estándar es demasiado abrupto y poco realista, por lo cual se realiza un suavizamiento de los valores optimistas y pesimistas por un año, para lo cual se utiliza la siguiente formula:</p>
+<pre><code>pib_var_std = std_dev * sqrt(month / 12) </code></pre>
+<p>donde:</p>
+<ul>
+<li>month se refiere al numero del mes a predecir, por ejemplo, si Octubre es el primer mes a predecir, este sería el mes 1</li>
+<li>sqrt se refiere a la raíz cuadrada</li>
+<li>std_dev es la desviación estándar de la serie neutral</li>
+</ul>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p>Como siguiente paso, se requiere calcular los pesos para los escenarios</p>
+<p>Para la ponderación de pesos macroeconómicos utilizamos las fechas históricas de las variables macroeconómicas. Para los pesos primero se definen unos rangos con la data historica de la variable macro utilizada usando la siguiente fórmula:</p>
+<ul>
+<li>Rango mínimo: min valor + (max valor - min valor)/3</li>
+<li>Rango máximo: valor máximo de la data</li>
+<li>Rango mediano: Rango min – (max valor – min valor)/3</li>
+</ul>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>para luego obtener el conteo de los valores de la variable que se encuentren en cada rango siendo los cuales estan definidos de la siguiente manera para los escenarios optimista, pesimista y neutral:</p>
+<ul>
+<li>Conteo pesimista: Conteo de observaciones menores al rango mínimo.</li>
+<li>Conteo optimista: Conteo de observaciones mayores o iguales al rango medio</li>
+<li>Conteo neutral: Conteo de observaciones mayores o iguales al rango mínimo y menores al rango máximo.</li>
+</ul>
+<p>Definción de pesos de los escenarios Después se divide el conteo para cada rango entre el total de las observaciones y esto nos da el porcentaje respectivo para los pesos de cada escenario.</p>
+</section>
+<section id="resumen-fwl-ejecución-de-modelo" class="slide level2">
+<h2>Resumen FWL Ejecución de Modelo</h2>
+<ol type="1">
+<li><p>Se leen las proyecciones de la variable independiente (PIB_var)</p></li>
+<li><p>Se leen los parámetros resultantes del modelo escogido (esto se guardó en el paso 2. Selección del Modelo)</p></li>
+<li><p>Se carga el historico de la variable independiente y dependiente.</p></li>
+<li><p>Se realizan los rezagos requeridos para cada modelo (el número de rezagos se determinó en el paso 2. Selección del Modelo)</p></li>
+<li><p>Se reentrena el mejor modelo con los parámetros que se leyeron previamente.</p></li>
+<li><p>Se obtiene las predicciones para cada escenario</p></li>
+<li><p>Se obtiene el valor ancla, el cual es el último valor real obtenido</p></li>
+<li><p>Se dividen los valores de las predicciones entre el valor ancla</p></li>
+</ol>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
