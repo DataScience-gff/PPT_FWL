@@ -128,13 +128,14 @@ contengan valores nulos (si existieran).
 Se entrena una batería de modelos, considerando variables exogenas,
 combinaciones de estas y sub dividiendo los datos, lo que se persigue es
 realizar una matriz de las métricas resultantes de estos modelos, para
-posteriormente filtrarlos por lógica de negocio (sentido económico) y valores de estas
-métricas, obtenieno una matriz reducida con los modelos que cumplen con
-las pruebas y que se podrían implementar.
+posteriormente filtrarlos por lógica de negocio (sentido económico) y
+valores de estas métricas, obtenieno una matriz reducida con los modelos
+que cumplen con las pruebas y que se podrían implementar.
 
 Se escoge el mejor modelo, tratando de priorizar un modelo de Regresión
-Lineal con PIB_var como variable independiente.  
-De no ser posible, se elige otro modelo que considere PIB_var como variable independiente (ARIMA o VAR).
+Lineal con PIB_var como variable independiente.\
+De no ser posible, se elige otro modelo que considere PIB_var como
+variable independiente (ARIMA o VAR).
 
 ## FWL - Escenarios Macroeconómicos
 
@@ -147,10 +148,10 @@ Para obtener el dato mensual de las variaciones del PIB, se calcula la
 diferencia entre un año y el siguiente, y esta diferencia se divide
 entre 12 para distribuirlo uniformemente.
 
-
 $$Diferencia = \frac{ (PIB_{actual} - PIB_{anterior})} {12}$$
 
 ## 
+
 ### Escenarios Optimista y Pesimista
 
 Para los meses de Enero a Noviembre, se incrementa el valor actual por
@@ -174,7 +175,6 @@ desviación estándar es demasiado abrupto y poco realista, por lo cual se
 realiza un suavizamiento de los valores optimistas y pesimistas por un
 año, para lo cual se utiliza la siguiente formula:
 
-
 $$
 PIB\_var\_std = Std\_dev * \sqrt{\frac{month}{12} }
 $$
@@ -183,12 +183,13 @@ donde:
 
 -   month se refiere al numero del mes a predecir, por ejemplo, si
     Octubre es el primer mes a predecir, este sería el mes 1
-    
-[//]: # -   sqrt se refiere a la raíz cuadrada
+
+<!-- -->
 
 -   std_dev es la desviación estándar de la serie neutral
 
 ## 
+
 ### Pesos
 
 Como siguiente paso, se requiere calcular los pesos para los escenarios
@@ -202,14 +203,12 @@ usando la siguiente fórmula:
 -   Rango máximo: valor máximo de la data
 -   Rango mediano: Rango min – (max valor – min valor)/3
 
-##
+## 
+
 ### Conteos
 
-Se obtiene el conteo de los valores de la variable que se
-encuentren en cada rango los cuales estan definidos de la
-siguiente manera:
-
-[//]: # para los escenarios optimista, pesimista y neutral:
+Se obtiene el conteo de los valores de la variable que se encuentren en
+cada rango los cuales estan definidos de la siguiente manera:
 
 -   Conteo pesimista: Conteo de observaciones menores al rango mínimo.
 -   Conteo optimista: Conteo de observaciones mayores o iguales al rango
@@ -217,10 +216,11 @@ siguiente manera:
 -   Conteo neutral: Conteo de observaciones mayores o iguales al rango
     mínimo y menores al rango máximo
 
-### Definción de pesos de los escenarios  
+### Definción de pesos de los escenarios
 
-Después se divide el conteo para cada rango entre el total de las observaciones y esto representa el
-porcentaje respectivo para los pesos de cada escenario.
+Después se divide el conteo para cada rango entre el total de las
+observaciones y esto representa el porcentaje respectivo para los pesos
+de cada escenario.
 
 ## FWL - Ejecución de Modelo
 
